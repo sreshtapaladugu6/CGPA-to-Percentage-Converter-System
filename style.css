@@ -1,0 +1,278 @@
+/* CO1: Apply Introductory CSS Styling - Global reset for consistent layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CO1: Apply CSS styling to body and background layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(to bottom right, #dbeafe, #e0e7ff);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    transition: background 0.3s ease;
+}
+
+/* CO4: JavaScript interactivity support (dark mode class controlled by JS) */
+body.dark-mode {
+    background: linear-gradient(to bottom right, #1f2937, #111827);
+    color: #fff;
+}
+
+/* CO2: CSS layout using container for page alignment */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CO2: Flexbox layout for header section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* CO1: Basic CSS typography styling */
+h1 {
+    font-size: 2rem;
+    color: #312e81;
+}
+
+/* CO4: Dark mode UI styling triggered via JavaScript */
+body.dark-mode h1 {
+    color: #fff;
+}
+
+/* CO2: Button styling using CSS */
+.dark-mode-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #1f2937;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+/* CO4: Dark mode styling change */
+body.dark-mode .dark-mode-btn {
+    background: #fbbf24;
+    color: #1f2937;
+}
+
+/* CO1: Hover effect styling */
+.dark-mode-btn:hover {
+    background: #374151;
+}
+
+/* CO4: Hover styling for dark mode */
+body.dark-mode .dark-mode-btn:hover {
+    background: #f59e0b;
+}
+
+/* CO2: Card layout design using CSS box model */
+.card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* CO4: Dark mode card styling */
+body.dark-mode .card {
+    background: #1f2937;
+    color: #fff;
+}
+
+/* CO2: Flexbox layout for tabs navigation */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* CO4: Dark mode border styling */
+body.dark-mode .tabs {
+    border-bottom-color: #4b5563;
+}
+
+/* CO2: Tab button UI design */
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: #f3f4f6;
+    color: #4b5563;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* CO4: Dark mode tab styling */
+body.dark-mode .tab-btn {
+    background: #374151;
+    color: #9ca3af;
+}
+
+/* CO1: Hover visual effect */
+.tab-btn:hover {
+    background: #e5e7eb;
+}
+
+/* CO4: Hover styling for dark mode */
+body.dark-mode .tab-btn:hover {
+    background: #4b5563;
+}
+
+/* CO4: Active tab styling (controlled by JS) */
+.tab-btn.active {
+    background: #4f46e5;
+    color: white;
+}
+
+/* CO2: Content layout spacing */
+.tab-content {
+    padding: 2rem;
+}
+
+/* CO4: Tab panel hidden by default for dynamic display */
+.tab-panel {
+    display: none;
+}
+
+/* CO4: Visible tab controlled through JS DOM interaction */
+.tab-panel.active {
+    display: block;
+}
+
+/* CO1: Heading typography styling */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+/* CO4: Dark mode heading styling */
+body.dark-mode h2 {
+    color: #fff;
+}
+
+/* CO1: Text styling */
+.description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+/* CO4: Dark mode text adjustment */
+body.dark-mode .description {
+    color: #9ca3af;
+}
+
+/* CO2: Form label styling */
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+/* CO4: Dark mode form label styling */
+body.dark-mode label {
+    color: #d1d5db;
+}
+
+/* CO2: Form input styling */
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background: white;
+    color: #1f2937;
+    transition: border-color 0.3s ease;
+}
+
+/* CO4: Dark mode input styling */
+body.dark-mode input[type="number"],
+body.dark-mode input[type="text"] {
+    background: #374151;
+    border-color: #4b5563;
+    color: white;
+}
+
+/* CO1: Focus effect styling */
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+/* CO2: Grid layout for subject input fields */
+.subject-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+/* CO2: Button styling */
+.btn-primary,
+.btn-secondary {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+/* CO1: Primary button color styling */
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+}
+
+/* CO1: Hover effect */
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+/* CO2: Secondary button styling */
+.btn-secondary {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+/* CO4: Dark mode secondary button */
+body.dark-mode .btn-secondary {
+    background: #374151;
+    color: white;
+}
+
+/* CO2: Responsive design using media query */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .subject-inputs {
+        grid-template-columns: 1fr;
+    }
+}

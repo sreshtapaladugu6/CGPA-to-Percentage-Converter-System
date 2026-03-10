@@ -1,0 +1,108 @@
+<!DOCTYPE html> <!-- CO1: Apply Internet Fundamentals and basic HTML structure -->
+<html lang="en"> <!-- CO1: HTML page language declaration -->
+<head>
+    <meta charset="UTF-8"> <!-- CO1: Character encoding setup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- CO1: Responsive web design basics -->
+    <title>CGPA to Percentage Conversion Calculator</title> <!-- CO1: Page title definition -->
+    <link rel="stylesheet" href="style.css"> <!-- CO1: Introductory CSS styling by linking external stylesheet -->
+</head>
+<body>
+    <div class="container"> <!-- CO2: CSS layout container -->
+        <div class="header"> <!-- CO2: Semantic structuring and CSS layout -->
+            <h1>CGPA to Percentage Conversion Calculator</h1>
+            <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark</button> <!-- CO3/CO4: JavaScript interactivity for dark mode -->
+        </div>
+
+        <div class="card"> <!-- CO2: CSS layout component -->
+            <!-- Tabs -->
+            <div class="tabs"> <!-- CO2: Layout for tab navigation -->
+                <button class="tab-btn active" data-tab="calc-cgpa">Calculate CGPA</button> <!-- CO3/CO4: JavaScript tab interaction -->
+                <button class="tab-btn" data-tab="cgpa-to-percent">CGPA to %</button> <!-- CO3/CO4 -->
+                <button class="tab-btn" data-tab="percent-to-cgpa">% to CGPA</button> <!-- CO3/CO4 -->
+                <button class="tab-btn" data-tab="about">About</button> <!-- CO3/CO4 -->
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content"> <!-- CO2: Layout container for dynamic content -->
+                
+                <!-- Calculate CGPA Tab -->
+                <div id="calc-cgpa" class="tab-panel active"> <!-- CO4: DOM manipulation for tab switching -->
+                    <h2>Calculate Your CGPA</h2>
+                    <p class="description">Enter your subjects with their grades (0-10). Credits are optional - if not entered, all subjects will be weighted equally.</p>
+                    
+                    <div id="subjectsContainer"></div> <!-- CO4: Dynamic DOM content insertion using JavaScript -->
+                    
+                    <button id="addSubject" class="btn-secondary">+ Add Subject</button> <!-- CO4: JavaScript event handling -->
+                    <button id="calculateCGPA" class="btn-primary">Calculate CGPA</button> <!-- CO3: JavaScript logic for CGPA calculation -->
+                    
+                    <div id="cgpaResult" class="result-box" style="display: none;"></div> <!-- CO4: DOM update to display results -->
+                    
+                    <p class="formula">Formula: CGPA = (Sum of Grade × Credits) ÷ Total Credits</p>
+                </div>
+
+                <!-- CGPA to Percentage Tab -->
+                <div id="cgpa-to-percent" class="tab-panel"> <!-- CO4: DOM-based tab switching -->
+                    <h2>Convert CGPA to Percentage</h2>
+                    <label>Enter CGPA (0-10):</label> <!-- CO2: HTML form elements -->
+                    <input type="number" id="cgpaInput" placeholder="e.g., 8.5" step="0.01" min="0" max="10"> <!-- CO2: HTML form input -->
+                    <button id="calculatePercent" class="btn-primary">Calculate Percentage</button> <!-- CO3: JavaScript calculation -->
+                    <div id="percentResult" class="result-box" style="display: none;"></div> <!-- CO4: DOM result display -->
+                    <p class="formula">Formula: Percentage = CGPA × 9.5</p>
+                </div>
+
+                <!-- Percentage to CGPA Tab -->
+                <div id="percent-to-cgpa" class="tab-panel"> <!-- CO4: DOM manipulation -->
+                    <h2>Convert Percentage to CGPA</h2>
+                    <label>Enter Percentage (0-100):</label> <!-- CO2: HTML form usage -->
+                    <input type="number" id="percentInput" placeholder="e.g., 85" step="0.01" min="0" max="100"> <!-- CO2 -->
+                    <button id="calculateCGPAFromPercent" class="btn-primary">Calculate CGPA</button> <!-- CO3: JavaScript calculation -->
+                    <div id="cgpaFromPercentResult" class="result-box" style="display: none;"></div> <!-- CO4: DOM output -->
+                    <p class="formula">Formula: CGPA = Percentage ÷ 9.5</p>
+                </div>
+
+                <!-- About Tab -->
+                <div id="about" class="tab-panel"> <!-- CO2: Structured content layout -->
+                    <h2>About CGPA Conversion</h2>
+                    
+                    <div class="info-section"> <!-- CO2: CSS structured content block -->
+                        <h3>What is CGPA?</h3>
+                        <p>CGPA (Cumulative Grade Point Average) is a grading system used by educational institutions to evaluate overall academic performance.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Conversion Formula</h3>
+                        <div class="formula-box"> <!-- CO2: Styled content box -->
+                            <p><strong>Percentage = CGPA × 9.5</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>CGPA to Percentage Scale</h3>
+                        <div class="scale-box"> <!-- CO2: CSS layout grid/list -->
+                            <div class="scale-item"><span>10.0 CGPA</span><span>= 95.0%</span></div>
+                            <div class="scale-item"><span>9.5 CGPA</span><span>= 90.25%</span></div>
+                            <div class="scale-item"><span>9.0 CGPA</span><span>= 85.5%</span></div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>How to Calculate CGPA?</h3>
+                        <ol> <!-- CO1: Basic HTML list structure -->
+                            <li>Multiply each subject's grade point by its credit hours</li>
+                            <li>Add all the results</li>
+                            <li>Divide by the total number of credit hours</li>
+                        </ol>
+                    </div>
+
+                    <div class="warning-box"> <!-- CO2: Styled alert box -->
+                        <p><strong>⚠️ Important Note</strong></p>
+                        <p>Different institutions may use different conversion formulas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- CO3 & CO4: JavaScript programming and DOM interactivity -->
+</body>
+</html>]
